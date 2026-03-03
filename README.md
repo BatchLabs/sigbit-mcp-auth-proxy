@@ -71,3 +71,7 @@ _Note_: They are not mutually exclusive. You can **put `mcp-auth-proxy` in front
 | Cursor            | ✅     |                                                  |
 
 - \*1: https://platform.openai.com/docs/mcp
+
+# Building
+
+>Note for users at Batch.com: the image needs to be built and pushed manually into the docker registry.
