@@ -56,6 +56,12 @@ func (p *ProxyRouter) handleProtectedResource(c *gin.Context) {
 }
 
 func (p *ProxyRouter) handleProxy(c *gin.Context) {
+	if c.Request.URL.Path == "/favicon.ico" {
+		p.proxy.ServeHTTP(c.Writer, c.Request)
+		c.Abort()
+		return
+	}
+
 	authHeader := c.Request.Header.Get("Authorization")
 	if !strings.HasPrefix(authHeader, "Bearer ") {
 		c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "Unauthorized"})
