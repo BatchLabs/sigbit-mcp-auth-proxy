@@ -1,6 +1,6 @@
 module github.com/sigbit/mcp-auth-proxy
 
-go 1.25
+go 1.26.10
 
 require (
 	github.com/blendle/zapdriver v1.3.1
